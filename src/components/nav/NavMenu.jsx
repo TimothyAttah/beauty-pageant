@@ -48,7 +48,6 @@ export const Nav = () => {
             to={item.to}
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
-            {/* <span>{item.icon}</span> */}
             <span>{item.name}</span>
           </NavLink>
         </li>

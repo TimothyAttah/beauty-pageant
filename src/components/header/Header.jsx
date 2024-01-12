@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Styles from './HeaderStyles';
 import { Container } from '../../styles/globalStyles';
 import logo from '../../assets/nica2.png';
@@ -12,6 +12,21 @@ export const Header = () => {
         .querySelector('header')
         .classList.toggle('bg-reveal', window.scrollY > 0);
     });
+  };
+
+  const [burgerClass, setBurgerClass] = useState('burger-bar unclicked');
+  const [menuClass, setMenuClass] = useState(false);
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+  const updateMenu = () => {
+    if (!isMenuClicked) {
+      setBurgerClass('burger-bar clicked');
+      setMenuClass(true);
+    } else {
+      setBurgerClass('burger-bar unclicked');
+      setMenuClass(false);
+    }
+    setIsMenuClicked(!isMenuClicked);
   };
 
   headerBg();
@@ -29,6 +44,11 @@ export const Header = () => {
         <div>
           <button>Login</button>
           <button>Register</button>
+        </div>
+        <div className='burger-menu' onClick={updateMenu}>
+          <div className={burgerClass}></div>
+          <div className={burgerClass}></div>
+          <div className={burgerClass}></div>
         </div>
       </Container>
     </Styles.MainHeaderContainer>

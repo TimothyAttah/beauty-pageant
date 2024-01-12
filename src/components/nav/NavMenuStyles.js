@@ -7,10 +7,6 @@ export const NavMenuContainer = styled.nav`
   /* gap: 2.5rem; */
   /* height: 70px; */
 
-  .bg-reveal {
-    color: red;
-  }
-
   @media screen and (max-width: ${({ theme }) => theme.screens.mediumScreen}) {
     display: none;
   }
@@ -82,11 +78,11 @@ export const NavMenuContainer = styled.nav`
 
       :hover {
         ::after {
-          width: 110%;
+          width: 100%;
         }
       }
 
-      .bg-reveal {
+      /* .bg-reveal {
         ::after {
           content: '';
           position: absolute;
@@ -98,7 +94,7 @@ export const NavMenuContainer = styled.nav`
           transition: 0.5s;
           border-radius: 30px;
         }
-      }
+      } */
 
       :hover {
         /* span:first-child {
