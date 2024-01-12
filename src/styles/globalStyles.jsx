@@ -68,8 +68,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSize.fsmd};
     line-height: 1.5;
     color: ${({ theme }) => theme.color.textDarkGray};
-    ${'' /* background-color: ${({ theme }) => theme.color.bodyBgColor}; */}
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.bodyBgColor};
+    ${'' /* background-color: white; */}
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 
