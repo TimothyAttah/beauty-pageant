@@ -148,7 +148,8 @@ input {
   transform: translateY(0)
 }
 
- .nav li {
+ ${
+   '' /* .nav li {
    a.active {
     color: white;
     transition: .5s all;
@@ -165,6 +166,8 @@ input {
       }
 }
  }
+
+
 
  .nav li {
   a {
@@ -184,6 +187,25 @@ input {
       }
     }
   }
+ } */
+ }
+
+ .nav.nav-color li {
+   a.active {
+    color: white;
+      ::after {
+        background: white;
+      }
+   }
+ }
+
+ .nav.nav-color li a {
+ :hover {
+  color: white;
+   ::after {
+        background: white;
+      }
+ }
  }
 `;
 

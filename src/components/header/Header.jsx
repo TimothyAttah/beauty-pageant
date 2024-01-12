@@ -14,6 +14,8 @@ export const Header = () => {
     });
   };
 
+  headerBg();
+
   const [burgerClass, setBurgerClass] = useState('burger-bar unclicked');
   const [menuClass, setMenuClass] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -29,7 +31,6 @@ export const Header = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
-  headerBg();
   return (
     <Styles.MainHeaderContainer className='header'>
       <Container primary>
@@ -41,10 +42,10 @@ export const Header = () => {
         <div>
           <Nav />
         </div>
-        <div>
+        <Styles.HeaderBtn>
           <button>Login</button>
           <button>Register</button>
-        </div>
+        </Styles.HeaderBtn>
         <div className='burger-menu' onClick={updateMenu}>
           <div className={burgerClass}></div>
           <div className={burgerClass}></div>

@@ -35,7 +35,9 @@ const navData = [
 export const Nav = () => {
   const headerBg = () => {
     window.addEventListener('scroll', () => {
-      document.querySelector('nav').classList.toggle('nav', window.scrollY > 0);
+      document
+        .querySelector('nav')
+        .classList.toggle('nav-color', window.scrollY > 0);
     });
   };
 
@@ -52,7 +54,6 @@ export const Nav = () => {
           </NavLink>
         </li>
       ))}
-      <Styles.Indicator></Styles.Indicator>
     </Styles.NavMenuContainer>
   );
 };

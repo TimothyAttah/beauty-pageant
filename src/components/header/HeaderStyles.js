@@ -49,7 +49,7 @@ export const MainHeaderContainer = styled.header`
     width: 2rem;
     height: 0.2rem;
     /* background-color: rgb(0, 183, 255); */
-    background-color: yellow;
+    background-color: ${theme.color.textXDarkGray};
     /* background-color: ${({ theme }) => theme.color.colorWhite}; */
     border-radius: 0.5rem;
     margin-bottom: 2px;
@@ -58,7 +58,7 @@ export const MainHeaderContainer = styled.header`
   .burger-bar.clicked:nth-child(1) {
     transform: rotate(45deg) translate(-0.4rem, 1.15rem);
     transition: ease-out 0.5s;
-    background-color: red;
+    background-color: ${theme.color.textXDarkGray};
   }
   .burger-bar.clicked:nth-child(2) {
     transform: scale(0);
@@ -67,7 +67,7 @@ export const MainHeaderContainer = styled.header`
   .burger-bar.clicked:nth-child(3) {
     transform: rotate(135deg) translate(0.7rem, 1rem);
     transition: ease-out 0.5s;
-    background-color: red;
+    background-color: ${theme.color.textXDarkGray};
   }
   .burger-bar.unclicked {
     transform: rotate(0) translate(0);
@@ -81,4 +81,14 @@ export const HeaderLogo = styled.div`
   }
   a {
   }
+`;
+
+export const HeaderBtn = styled.div`
+  /* position: absolute;
+  top: 50px;
+  right: 200px;
+  transform: translateY(-50%); */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
