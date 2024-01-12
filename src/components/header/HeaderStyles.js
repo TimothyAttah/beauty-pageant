@@ -2,14 +2,31 @@ import styled from 'styled-components';
 
 export const MainHeaderContainer = styled.header`
   position: fixed;
-  width: 100%;
-  height: 5rem;
   left: 0;
-  right: 0;
   top: 0;
-  /* background: transparent; */
-  background-color: ${({ theme }) => theme.color.colorBackground};
-  z-index: 99;
+  width: 100%;
+  z-index: 2;
+  padding: 10px 0;
+
+  ::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: ${({ theme }) => theme.color.bgColor}; */
+    background-color: var(--main-color);
+    box-shadow: ${({ theme }) => theme.shadow.mainShadow};
+    z-index: -99;
+    transform: translateY(calc(-100% - 10px));
+    transition: transform 0.5s ease;
+    .bg-reveal {
+      ::before {
+        transform: translateY(0);
+      }
+    }
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -41,11 +58,6 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     cursor: pointer;
     display: none;
-
-    /* @media screen and (max-width: ${({ theme }) =>
-      theme.screens.mediumScreen}) {
-      display: flex;
-    } */
   }
 
   .burger-bar {
@@ -77,5 +89,13 @@ export const HeaderWrapper = styled.div`
 
   @media screen and (max-width: ${({ theme }) => theme.screens.smallScreen}) {
     padding: 0 10px;
+  }
+`;
+
+export const HeaderLogo = styled.div`
+  img {
+    width: 40px;
+  }
+  a {
   }
 `;

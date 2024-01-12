@@ -4,8 +4,12 @@ export const NavMenuContainer = styled.nav`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
-  height: 70px;
+  /* gap: 2.5rem; */
+  /* height: 70px; */
+
+  .bg-reveal {
+    color: red;
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.screens.mediumScreen}) {
     display: none;
@@ -22,11 +26,13 @@ export const NavMenuContainer = styled.nav`
     align-items: center;
     position: relative;
     width: 100px;
-    height: 70px;
+    /* height: 70px; */
     z-index: 1;
     /* border: 2px solid red; */
 
     a.active {
+      color: var(--main-color);
+      /* color: white; */
       ::after {
         content: '';
         position: absolute;
@@ -34,7 +40,7 @@ export const NavMenuContainer = styled.nav`
         left: 10%;
         width: 80%;
         height: 5px;
-        background: white;
+        background: var(--main-color);
         transition: 0.5s;
         border-radius: 30px;
       }
@@ -50,8 +56,13 @@ export const NavMenuContainer = styled.nav`
       padding: 0 10px;
       transition: 0.5s;
       gap: 5px;
-      font-size: 1.1rem;
-      font-weight: bold;
+      text-transform: capitalize;
+      font-size: ${({ theme }) => theme.fontSize.fsmd};
+      color: ${({ theme }) => theme.color.textXDarkGray};
+      transition: color 0.3s ease;
+      :hover {
+        color: var(--main-color);
+      }
 
       svg {
         display: block;
@@ -64,7 +75,7 @@ export const NavMenuContainer = styled.nav`
         left: -3%;
         width: 0%;
         height: 5px;
-        background: white;
+        background: var(--main-color);
         transition: 0.5s;
         border-radius: 30px;
       }
@@ -72,6 +83,20 @@ export const NavMenuContainer = styled.nav`
       :hover {
         ::after {
           width: 110%;
+        }
+      }
+
+      .bg-reveal {
+        ::after {
+          content: '';
+          position: absolute;
+          bottom: -20%;
+          left: -3%;
+          width: 0%;
+          height: 5px;
+          background: white;
+          transition: 0.5s;
+          border-radius: 30px;
         }
       }
 
@@ -102,23 +127,6 @@ export const NavMenuContainer = styled.nav`
       }
     }
   }
-
-  /* a {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    transition: ${({ theme }) => theme.transitions.transitionPrimary};
-
-    :hover {
-      color: ${({ theme }) => theme.colors.colorBackground2};
-    }
-
-    svg {
-      display: block;
-    }
-
-
-  }*/
 `;
 
 export const Indicator = styled.div`

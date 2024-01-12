@@ -16,30 +16,32 @@ const navData = [
     to: '/',
   },
   {
-    name: 'For Sell',
-    // icon: <RiPriceTagFill />,
-    to: '/for-sell',
-  },
-  {
-    name: 'For Rent',
-    // icon: <RiSuitcase3Line />,
-    to: '/for-rent',
-  },
-  {
     name: 'About',
-    // icon: <RiBookReadFill />,
+    // icon: <RiPriceTagFill />,
     to: '/about',
   },
   {
     name: 'Contact',
-    // icon: <RiShieldUserFill />,
-    to: '/contact',
+    // icon: <RiSuitcase3Line />,
+    to: '/contact-us',
+  },
+  {
+    name: 'Gallery',
+    // icon: <RiBookReadFill />,
+    to: '/gallery',
   },
 ];
 
-export const NavMenu = () => {
+export const Nav = () => {
+  const headerBg = () => {
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').classList.toggle('nav', window.scrollY > 0);
+    });
+  };
+
+  headerBg();
   return (
-    <Styles.NavMenuContainer>
+    <Styles.NavMenuContainer className='nav'>
       {navData.map((item, i) => (
         <li key={i}>
           <NavLink
