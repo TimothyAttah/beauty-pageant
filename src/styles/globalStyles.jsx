@@ -68,11 +68,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSize.fsmd};
     line-height: 1.5;
     color: ${({ theme }) => theme.color.textDarkGray};
-    background-color: ${({ theme }) => theme.color.bodyBgColor};
+    ${'' /* background-color: ${({ theme }) => theme.color.bodyBgColor}; */}
+    background-color: white;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 
-    border: 2px solid red;
+    ${'' /* border: 2px solid red; */}
 
   }
 
@@ -147,12 +148,73 @@ input {
   transform: translateY(0)
 }
 
+ ${
+   '' /* .nav li {
+   a.active {
+    color: white;
+    transition: .5s all;
+      ::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: 10%;
+        width: 80%;
+        height: 5px;
+        background: white;
+        transition: 0.5s;
+        border-radius: 30px;
+      }
+}
+ }
+
+
+
+ .nav li {
+  a {
+    transition: .5s all;
+    :hover {
+      color:white;
+      ::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: 10%;
+        width: 80%;
+        height: 5px;
+        background: white;
+        transition: 0.5s;
+        border-radius: 30px;
+      }
+    }
+  }
+ } */
+ }
+
+ .nav.nav-color li {
+   a.active {
+    color: white;
+      ::after {
+        background: white;
+      }
+   }
+ }
+
+ .nav.nav-color li a {
+ :hover {
+  color: white;
+   ::after {
+        background: white;
+      }
+ }
+ }
 `;
 
 export const Container = styled.div`
-  max-width: 1170px;
+  /* max-width: 1170px; */
+  max-width: 1500px;
   margin: auto;
   padding: 0 15px;
+  /* border: 2px dashed blue; */
 
   ${(props) =>
     props.primary &&

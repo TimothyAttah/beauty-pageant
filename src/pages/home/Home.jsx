@@ -1,10 +1,11 @@
 import React from 'react';
+import { Hero } from '../hero/Hero';
 // import * as Styles from './HomeStyles';
 
 const Home = () => {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Hero />
     </div>
   );
 };
