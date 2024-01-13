@@ -6,7 +6,7 @@ export const MainHeaderContainer = styled.header`
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 99;
   padding: 10px 0;
 
   ::before {
@@ -22,6 +22,7 @@ export const MainHeaderContainer = styled.header`
     z-index: -99;
     transform: translateY(calc(-100% - 10px));
     transition: transform 0.5s ease;
+    box-shadow: 7px 7px 5px 0 rgba(50, 50, 50, 0.75);
 
     .bg-reveal {
       ::before {
@@ -91,4 +92,9 @@ export const HeaderBtn = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  a button {
+    background-color: inherit;
+    font-size: ${theme.fontSize.fslg};
+  }
 `;

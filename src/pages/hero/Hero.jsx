@@ -1,20 +1,20 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
-import { FadeIn } from '../../components/fadeIn/FadeIn';
+// import { FadeIn } from '../../components/fadeIn/FadeIn';
 import { Container } from '../../styles/globalStyles';
 import * as Styles from './HeroStyle';
-import nica from '../../assets/nica1.png';
+// import nica from '../../assets/nica1.png';
 import heroVic from '../../assets/240_F_82356597_1SBQQ59qwNyJ7iNDgZJDeXuqZS26WljN_ST.mp4';
-import heroPix1 from '../../assets/240_F_162502605_3FqWTe1ni1AF9ZSxSVeycBB7uUhYnDeg.jpg';
-import heroPix2 from '../../assets/240_F_273114869_FCBLWQbVau5VHUxqb225AUzam527AQsG.jpg';
-import heroPix3 from '../../assets/240_F_633826600_ubucjKx3obauppPMHwRdDR29oTYIPmwD.jpg';
+import heroPix1 from '../../assets/golden.png';
+import heroPix2 from '../../assets/red-carpet-background-realistic-style_23-2147774601.jpg';
+import heroPix3 from '../../assets/20231016MRK09465.jpg';
 import heroPix4 from '../../assets/beautiful-afro-american-woman_144627-13084.jpg';
-import heroPix6 from '../../assets/crystal-crown-princess-isolated-white-background_379858-15455.jpg';
-import heroPix7 from '../../assets/240_F_1223936_xzZScqMjGm9tGm9OtvIoBiaSTzNNPQ.jpg';
+// import heroPix6 from '../../assets/crystal-crown-princess-isolated-white-background_379858-15455.jpg';
+import heroPix7 from '../../assets/still-life-ruler-crown_23-2150248876.jpg';
 
 export const Hero = () => {
   return (
-    <Styles.HeroContainer>
+    <Styles.HeroContainer id='home'>
       <Container>
         <Styles.HeroWrapper>
           <Styles.HeroInfo>
@@ -46,30 +46,23 @@ export const Hero = () => {
           </Styles.VideoWrapper>
         </Styles.HeroWrapper>
         <Styles.HeroGallery>
-          <h2>...not just a beauty</h2>
+          <h2>...not just beauty</h2>
           <Styles.HeroGalleryWrapper>
             <Styles.HeroGalleryPix>
               <img src={heroPix4} alt='' />
             </Styles.HeroGalleryPix>
+
             <Styles.HeroGalleryPixItems>
-              <div>
-                <img src={heroPix1} alt='' />
-              </div>
-              <div>
-                <img src={heroPix2} alt='' />
-              </div>
-              <div>
-                <img src={heroPix3} alt='' />
-              </div>
-              <div>
-                <img src={heroPix7} alt='' />
-              </div>
-              {/* <div>
               <img src={heroPix1} alt='' />
-            </div>
-            <div>
+            </Styles.HeroGalleryPixItems>
+            <Styles.HeroGalleryPixItems>
+              <img src={heroPix2} alt='' />
+            </Styles.HeroGalleryPixItems>
+            <Styles.HeroGalleryPixItems>
+              <img src={heroPix3} alt='' />
+            </Styles.HeroGalleryPixItems>
+            <Styles.HeroGalleryPixItems>
               <img src={heroPix7} alt='' />
-            </div> */}
             </Styles.HeroGalleryPixItems>
           </Styles.HeroGalleryWrapper>
         </Styles.HeroGallery>

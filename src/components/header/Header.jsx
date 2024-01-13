@@ -4,6 +4,8 @@ import { Container } from '../../styles/globalStyles';
 import logo from '../../assets/nica2.png';
 import { Nav } from '../nav/NavMenu';
 import { Link } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { SideBar } from '../sideBar/SideBar';
 
 export const Header = () => {
   const headerBg = () => {
@@ -43,8 +45,12 @@ export const Header = () => {
           <Nav />
         </div>
         <Styles.HeaderBtn>
-          <button>Login</button>
-          <button>Register</button>
+          <Link to='/login'>
+            <button>Login</button>
+          </Link>
+          <Link to='/register'>
+            <button>Register</button>
+          </Link>
         </Styles.HeaderBtn>
         <div className='burger-menu' onClick={updateMenu}>
           <div className={burgerClass}></div>
@@ -52,6 +58,9 @@ export const Header = () => {
           <div className={burgerClass}></div>
         </div>
       </Container>
+      <AnimatePresence>
+        {menuClass && <SideBar setMenuClass={updateMenu} />}
+      </AnimatePresence>
     </Styles.MainHeaderContainer>
   );
 };

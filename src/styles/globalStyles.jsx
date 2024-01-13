@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
+import { theme } from '../themes';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -223,6 +224,17 @@ export const Container = styled.div`
       align-items: center;
       justify-content: space-between;
     `}
+
+  ${(props) =>
+    props.form &&
+    css`
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background-color: var(--main-color); */
+      margin-top: 150px;
+    `}
 `;
 
 export const GridContainer = styled.div`
@@ -236,4 +248,8 @@ export const GridContainer = styled.div`
       max-width: 1000px;
       margin: auto;
     `}
+
+  @media screen and (max-width: ${theme.screens.mediumScreen}) {
+    grid-template-columns: 1fr;
+  }
 `;

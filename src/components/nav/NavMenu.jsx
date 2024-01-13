@@ -8,27 +8,28 @@ import { NavLink } from 'react-router-dom';
 //   RiSuitcase3Line,
 // } from 'react-icons/ri';
 import * as Styles from './NavMenuStyles';
+import { NavLink as NavMenu } from '../navlink/NavLink';
 
 const navData = [
   {
     name: 'Home',
     // icon: <RiHome2Line />,
-    to: '/',
+    to: 'home',
   },
   {
     name: 'About',
     // icon: <RiPriceTagFill />,
-    to: '/about',
+    to: 'about',
   },
   {
     name: 'Contact',
     // icon: <RiSuitcase3Line />,
-    to: '/contact-us',
+    to: 'contact',
   },
   {
     name: 'Gallery',
     // icon: <RiBookReadFill />,
-    to: '/gallery',
+    to: 'gallery',
   },
 ];
 
@@ -42,16 +43,22 @@ export const Nav = () => {
   };
 
   headerBg();
+
   return (
     <Styles.NavMenuContainer className='nav'>
       {navData.map((item, i) => (
         <li key={i}>
-          <NavLink
+          <NavMenu
             to={item.to}
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
-            <span>{item.name}</span>
-          </NavLink>
+            <NavLink
+              to={item.to}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          </NavMenu>
         </li>
       ))}
     </Styles.NavMenuContainer>

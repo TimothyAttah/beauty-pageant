@@ -4,7 +4,7 @@ import { theme } from '../../themes';
 export const AboutContainer = styled.section`
   padding: 100px 0 50px 0;
   margin: auto;
-  max-width: 80%;
+  max-width: 85%;
 
   @media screen and (max-width: ${theme.screens.smallScreen}) {
     padding: 40px 0 50px 0;
@@ -56,7 +56,7 @@ export const AboutTitle = styled.span`
 export const AboutText = styled.p`
   /* grid-column: span 6; */
   align-self: center;
-  font-size: ${theme.fontSize.fslg};
+  font-size: ${theme.fontSize.fsmd};
   line-height: 35px;
 `;
 

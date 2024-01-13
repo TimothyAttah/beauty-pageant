@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 export const SideBar = styled(motion.div)`
   position: absolute;
   right: 0;
-  top: 0;
+  top: 60px;
   width: 300px;
   height: 100vh;
-  background: ${({ theme }) => theme.color.colorBackground2};
+  background: ${({ theme }) => theme.color.bodyBgColor};
   color: ${({ theme }) => theme.color.textColor};
   padding: 10px;
   border-top-left-radius: 20px;
@@ -36,7 +36,7 @@ export const SideBarNavLinks = styled.ul`
     transition: 0.3s ease-in-out all;
 
     :hover {
-      background-color: ${({ theme }) => theme.color.mainColor};
+      background-color: var(--main-color);
       color: ${({ theme }) => theme.color.textLight};
     }
   }
