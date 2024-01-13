@@ -8,6 +8,7 @@ export const MainHeaderContainer = styled.header`
   width: 100%;
   z-index: 99;
   padding: 10px 0;
+  /* box-shadow: 7px 7px 5px 0 rgba(50, 50, 50, 0.75); */
 
   ::before {
     content: '';
