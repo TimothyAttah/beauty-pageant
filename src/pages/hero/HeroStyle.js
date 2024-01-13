@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from '../../themes';
-import bg from '../../assets/blue-copy-space-digital-background_23-2148821698.jpg';
+// import bg from '../../assets/blue-copy-space-digital-background_23-2148821698.jpg';
 
 export const HeroContainer = styled.section`
-  padding: 100px 0 50px 0;
+  padding: 200px 0 50px 0;
 `;
 
 export const HeroWrapper = styled.div`
@@ -74,66 +74,84 @@ export const VideoWrapper = styled.div`
 export const HeroGallery = styled.div`
   padding: 30px 0;
   margin: auto;
+  margin-top: 70px;
+
+  h2 {
+    margin-bottom: 10px;
+    font-style: italic;
+  }
 `;
 
 export const HeroGalleryWrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   /* align-items: center; */
 
-  @media screen and (max-width: ${theme.screens.mediumScreen}) {
+  /* @media screen and (max-width: ${theme.screens.mediumScreen}) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: auto;
+  } */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  gap: 6px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 480px) {
+    /* changes the grid layout to a single column */
+    grid-template-columns: 1fr;
+
+    /* resets the grid placement properties for
+the images spanning four grid cells */
+    img.four-grid-cells {
+    }
+
+    /* resets the grid placement properties for
+the images spanning two grid columns  */
+    img.wide-image {
+    }
   }
 `;
 
 export const HeroGalleryPix = styled.div`
-  max-width: 700px;
-  width: 100%;
-  margin-bottom: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-  @media screen and (max-width: ${theme.screens.mediumScreen}) {
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    margin: auto;
-    max-width: 400px;
+  grid-row: span 2 / auto;
+  grid-column: span 2 / auto;
 
-    margin-bottom: 30px;
+  @media screen and (max-width: 480px) {
+    grid-row: auto;
+    grid-column: auto;
   }
 `;
 export const HeroGalleryPixItems = styled.div`
-  max-width: 700px;
-  width: 100%;
-  max-height: 600px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  /* border: 2px solid red; */
-  /* overflow: hidden; */
-
-  div {
-    max-width: 300px;
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
   img {
     width: 100%;
-    /* height: 100%; */
-    /* vertical-align: middle; */
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
   }
 
-  @media screen and (max-width: ${theme.screens.largeScreen}) {
-    div {
-      max-width: 200px;
-      width: 100%;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
+  ${(props) =>
+    props.wideImg &&
+    css`
+      grid-column: span 2 / auto;
+    `}
+
+  @media screen and (max-width: 480px) {
+    ${(props) =>
+      props.wideImg &&
+      css`
+        grid-column: auto;
+      `}
   }
 `;
 // export const HeroInfo = styled.div``;

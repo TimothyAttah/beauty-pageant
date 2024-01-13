@@ -1,12 +1,12 @@
 import React from 'react';
-import { FadeIn } from '../../components/fadeIn/FadeIn';
+// import { FadeIn } from '../../components/fadeIn/FadeIn';
 import * as Styles from './AboutStyle';
 import { Container } from '../../styles/globalStyles';
 import { FaCar, FaPlane, FaVideo } from 'react-icons/fa';
 
 export const About = () => {
   return (
-    <Styles.AboutContainer>
+    <Styles.AboutContainer id='about'>
       <Container>
         <Styles.SectionTitle>
           <Styles.AboutTitle>about us</Styles.AboutTitle>

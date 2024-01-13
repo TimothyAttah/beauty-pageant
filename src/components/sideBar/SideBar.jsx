@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styles from './SideBarStyles';
-import { Link } from 'react-router-dom';
+import { NavLink } from '../navlink/NavLink';
 
 const showAnimation = {
   hidden: {
@@ -25,6 +25,29 @@ const showAnimation = {
   },
 };
 
+const navData = [
+  {
+    name: 'Home',
+    // icon: <RiHome2Line />,
+    to: 'home',
+  },
+  {
+    name: 'About',
+    // icon: <RiPriceTagFill />,
+    to: 'about',
+  },
+  {
+    name: 'Contact',
+    // icon: <RiSuitcase3Line />,
+    to: 'contact',
+  },
+  {
+    name: 'Gallery',
+    // icon: <RiBookReadFill />,
+    to: 'gallery',
+  },
+];
+
 export const SideBar = ({ setMenuClass }) => {
   return (
     <Styles.SideBar
@@ -34,15 +57,11 @@ export const SideBar = ({ setMenuClass }) => {
       exit='hidden'
     >
       <Styles.SideBarNavLinks>
-        <Link to='/' onClick={() => setMenuClass()}>
-          Home
-        </Link>
-        <Link to='/aircrafts-for-sale' onClick={() => setMenuClass()}>
-          Aircraft
-        </Link>
-        <Link to='/' onClick={() => setMenuClass()}>
-          About
-        </Link>
+        {navData.map((item, i) => (
+          <NavLink to={item.to} key={i} onClick={() => setMenuClass(false)}>
+            <span>{item.name}</span>
+          </NavLink>
+        ))}
       </Styles.SideBarNavLinks>
     </Styles.SideBar>
   );
