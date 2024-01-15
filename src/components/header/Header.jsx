@@ -22,16 +22,28 @@ export const Header = () => {
         <Styles.HeaderNavWrapper>
           <FadeIn delay={0.3} direction='down'>
             <ul>
-              <NavLink to='/'>
+              <NavLink
+                to='/'
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 <li>Home</li>
               </NavLink>
-              <NavLink to='about'>
+              <NavLink
+                to='about'
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 <li>About</li>
               </NavLink>
-              <NavLink to='/gallery'>
+              <NavLink
+                to='/gallery'
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 <li>Gallery</li>
               </NavLink>
-              <NavLink to='/contact'>
+              <NavLink
+                to='/contact'
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 <li>Contact</li>
               </NavLink>
             </ul>

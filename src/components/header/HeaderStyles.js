@@ -49,6 +49,15 @@ export const HeaderNavWrapper = styled.nav`
     align-items: center;
     gap: 20px;
 
+    a.active {
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      color: ${theme.color.bgLight};
+    }
+
     a {
       width: 100px;
       height: 40px;
