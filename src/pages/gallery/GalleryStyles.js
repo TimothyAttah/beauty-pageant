@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { theme } from '../../themes';
 
 export const GalleryContainer = styled.section`
-  padding: 50px 0;
+  padding: 100px 0;
   margin: auto;
   max-width: 80%;
 
@@ -24,7 +24,7 @@ export const GalleryTitle = styled.span`
   font-size: ${theme.fontSize.fs3xl};
   font-weight: bold;
   text-transform: capitalize;
-  color: var(--main-color);
+  color: ${theme.color.textColor2};
   margin: 0 0 12px;
   padding: 0 40px;
   position: relative;
@@ -35,7 +35,7 @@ export const GalleryTitle = styled.span`
     position: absolute;
     height: 1px;
     width: 34px;
-    background-color: var(--main-color);
+    background-color: ${theme.color.textColor2};
     top: 50%;
     transform: translateY(-50%);
   }

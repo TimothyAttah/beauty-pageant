@@ -7,6 +7,7 @@ import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import { Footer } from './components/footer/Footer';
 import { About } from './pages/about/About';
+import { Gallery } from './pages/gallery/Gallery';
 
 const App = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Home />} />
-          <Route path='/gallery' element={<Home />} />
+          <Route path='/gallery' element={<Gallery />} />
 
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
