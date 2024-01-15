@@ -8,7 +8,7 @@ import { Gallery } from '../../components/gallery/Gallery';
 const Home = () => {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Hero />
     </div>
   );
 };

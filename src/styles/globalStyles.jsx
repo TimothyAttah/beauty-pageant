@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     ${'' /* color: ${({ theme }) => theme.color.textDarkGray}; */}
     background-color: ${({ theme }) => theme.color.bodyBgColor};
-    ${'' /* background-color: white; */}
+    ${'' /* background-color: red; */}
     ${
       '' /* -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent; */
