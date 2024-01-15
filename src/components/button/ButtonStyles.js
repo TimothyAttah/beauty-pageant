@@ -33,7 +33,8 @@ export const ButtonContainer = styled.div`
 
 export const HeaderBtnContainer = styled.div`
   position: relative;
-  width: 130px;
+  /* width: 130px; */
+  width: ${(props) => (props.width ? `${props.width}` : '130px')};
   height: 40px;
   /* margin: 20px; */
 
@@ -57,6 +58,7 @@ export const HeaderBtnContainer = styled.div`
     letter-spacing: 1px;
     overflow: hidden;
     transition: 0.5s;
+    text-transform: capitalize;
 
     :hover {
       letter-spacing: 3px;
