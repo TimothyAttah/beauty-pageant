@@ -2,7 +2,7 @@ import React from 'react';
 // import { FadeIn } from '../../components/fadeIn/FadeIn';
 import * as Styles from './AboutStyle';
 import { Container } from '../../styles/globalStyles';
-import { FaCar, FaPlane, FaVideo } from 'react-icons/fa';
+import { FaCar, FaPlane, FaVideo, FaWhatsapp } from 'react-icons/fa';
 
 export const About = () => {
   return (
@@ -74,6 +74,13 @@ export const About = () => {
             </Styles.AboutCard>
           </Styles.AboutCardWrapper>
         </Styles.AboutCardBox>
+        <Styles.EnquiresBox>
+          <h4>For Enquires and Sponsorship Contact</h4>
+          <div>
+            <FaWhatsapp />
+            <p>+234816696006, +2348143433988, +2349043631090</p>
+          </div>
+        </Styles.EnquiresBox>
       </Container>
     </Styles.AboutContainer>
   );

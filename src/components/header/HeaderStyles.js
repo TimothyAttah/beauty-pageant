@@ -96,7 +96,7 @@ export const HeaderBtn = styled.div`
     }
   } */
 
-  @media screen and (max-width: ${theme.screens.smallScreen}) {
+  @media screen and (max-width: ${theme.screens.mediumScreen}) {
     display: none;
   }
 `;
