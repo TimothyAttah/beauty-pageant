@@ -15,6 +15,12 @@ export const FormContainer = styled(motion.div)`
   border-radius: 6px;
   padding: 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  img {
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 `;
 export const FormHeader = styled(motion.div)`
   position: relative;

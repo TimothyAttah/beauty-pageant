@@ -2,6 +2,7 @@ import React from 'react';
 // import { FadeIn } from '../fadeIn/FadeIn';
 import { RiSendPlane2Fill } from 'react-icons/ri';
 import * as Styles from './RegisterFormStyles';
+import nicaLogo from '../../assets/nica2.png';
 import { Container } from '../../styles/globalStyles';
 
 const LoginForm = () => {
@@ -23,6 +24,7 @@ const LoginForm = () => {
     <>
       <Container form='true'>
         <Styles.FormContainer>
+          <img src={nicaLogo} alt='' />
           <Styles.Form onSubmit={handleSubmit}>
             <Styles.FormFirst className='form first'>
               <Styles.FormDetails personal='true'>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { RiSendPlane2Fill } from 'react-icons/ri';
 import * as Styles from './RegisterFormStyles';
 import { Container } from '../../styles/globalStyles';
+import nicaLogo from '../../assets/nica2.png';
 
 const RegisterForm = () => {
   const [nextForm, setNextForm] = useState(false);
@@ -23,6 +24,7 @@ const RegisterForm = () => {
     <>
       <Container form='true'>
         <Styles.FormContainer>
+          <img src={nicaLogo} alt='' />
           <Styles.FormHeader>Registration</Styles.FormHeader>
           <Styles.Form onSubmit={handleSubmit}>
             {!nextForm ? (
