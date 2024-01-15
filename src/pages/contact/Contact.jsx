@@ -3,7 +3,6 @@ import { Container, GridContainer } from '../../styles/globalStyles';
 import * as Styles from './ContactStyles';
 // import { Link } from 'react-router-dom';
 
-import Button from '../../components/button/Button';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 export const Contact = () => {
@@ -54,9 +53,7 @@ export const Contact = () => {
                 <textarea type='text' placeholder='Message' required />
               </Styles.InputBox>
               <Styles.BtnWrap>
-                <Button>
-                  <button type='submit'>Send Message</button>
-                </Button>
+                <button type='submit'>Send Message</button>
               </Styles.BtnWrap>
             </form>
           </Styles.ContactForm>

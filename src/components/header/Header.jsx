@@ -28,11 +28,11 @@ export const Header = () => {
               <NavLink to='about'>
                 <li>About</li>
               </NavLink>
-              <NavLink to='/contact'>
-                <li>Contact</li>
-              </NavLink>
               <NavLink to='/gallery'>
                 <li>Gallery</li>
+              </NavLink>
+              <NavLink to='/contact'>
+                <li>Contact</li>
               </NavLink>
             </ul>
           </FadeIn>

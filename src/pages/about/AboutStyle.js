@@ -7,7 +7,7 @@ export const AboutContainer = styled.section`
   max-width: 85%;
 
   @media screen and (max-width: ${theme.screens.smallScreen}) {
-    padding: 40px 0 50px 0;
+    /* padding: 40px 0 50px 0; */
   }
 `;
 
@@ -24,7 +24,7 @@ export const AboutTitle = styled.span`
   font-size: ${theme.fontSize.fs3xl};
   font-weight: bold;
   text-transform: capitalize;
-  color: var(--main-color);
+  color: ${theme.color.textColor2};
   margin: 0 0 12px;
   padding: 0 40px;
   position: relative;
@@ -35,7 +35,7 @@ export const AboutTitle = styled.span`
     position: absolute;
     height: 1px;
     width: 34px;
-    background-color: var(--main-color);
+    background-color: ${theme.color.textColor2};
     top: 50%;
     transform: translateY(-50%);
   }
@@ -56,8 +56,9 @@ export const AboutTitle = styled.span`
 export const AboutText = styled.p`
   /* grid-column: span 6; */
   align-self: center;
-  font-size: ${theme.fontSize.fsmd};
+  font-size: ${theme.fontSize.fslg};
   line-height: 35px;
+  color: ${theme.color.textColor};
 `;
 
 export const AboutCardBox = styled.div`
@@ -67,7 +68,7 @@ export const AboutCardBox = styled.div`
     display: inline-block;
     font-size: ${theme.fontSize.fs3xl};
     text-transform: capitalize;
-    color: var(--main-color);
+    color: ${theme.color.textColor2};
     margin: 0 0 12px;
     padding: 0 40px;
     position: relative;
@@ -121,12 +122,12 @@ export const AboutCard = styled.div`
 `;
 export const AboutPrizeTitle = styled.p`
   /* color: ${theme.color.textWhite}; */
-  color: var(--main-color);
+  color: ${theme.color.textColor2};
   font-size: ${theme.fontSize.fslg};
   line-height: 2;
 `;
 export const AboutPrizeMoney = styled.h3`
-  color: ${theme.color.textXDarkGray};
+  color: ${theme.color.bgLight};
   font-size: ${theme.fontSize.fslg};
   line-height: 1.5;
 
@@ -139,7 +140,44 @@ export const AboutPrizeSubtitle = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  /* line-height: 3; */
-  /* color: ${theme.color.textLight}; */
-  color: ${theme.color.textDarkGray};
+  color: ${theme.color.textColor};
+`;
+
+export const EnquiresBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${theme.color.textColor2};
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    svg {
+      font-size: ${theme.fontSize.fslg};
+      display: flex;
+    }
+  }
+
+  p {
+    font-size: ${theme.fontSize.fslg};
+  }
+
+  @media screen and (max-width: ${theme.screens.mediumScreen}) {
+    div {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    p,
+    h4 {
+      text-align: center;
+    }
+  }
 `;
