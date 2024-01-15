@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     overflow-y: scroll;
 
-    ::selection {
+    ${
+      '' /* ::selection {
       color: ${({ theme }) => theme.color.textWhite};
       background-color: var(--main-color);
 
@@ -25,21 +26,22 @@ export const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar {
     width: 5px;
-  }
+  } */
+    }
 
-   ::-webkit-scrollbar-track {
+   ${
+     '' /* ::-webkit-scrollbar-track {
     background-color: ${({ theme }) => theme.color.bodyBgColor};
   }
 
 ::-webkit-scrollbar-thumb {
     background-color:var(--main-color);
-  }
+  } */
+   }
 
 
-    ${
-      '' /* ::-webkit-scrollbar{
+    ::-webkit-scrollbar{
       display: none;
-    } */
     }
   }
 
@@ -68,19 +70,23 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     font-size: ${({ theme }) => theme.fontSize.fsmd};
     line-height: 1.5;
-    color: ${({ theme }) => theme.color.textDarkGray};
+    ${'' /* color: ${({ theme }) => theme.color.textDarkGray}; */}
     background-color: ${({ theme }) => theme.color.bodyBgColor};
     ${'' /* background-color: white; */}
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+    ${
+      '' /* -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent; */
+    }
 
     ${'' /* border: 2px solid red; */}
 
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  ${
+    '' /* h1, h2, h3, h4, h5, h6 {
      color: ${({ theme }) => theme.color.textXDarkGray};
     line-height: 1.3;
+  } */
   }
 
   h1 {
@@ -109,7 +115,6 @@ ul {
 }
 
 a {
-  color: var(--main-color);
   text-decoration: none;
 }
 

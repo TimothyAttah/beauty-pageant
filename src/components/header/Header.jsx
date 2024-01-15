@@ -1,66 +1,48 @@
-import React, { useState } from 'react';
-import * as Styles from './HeaderStyles';
+import React from 'react';
+import nicaLogo from '../../assets/nicaLogo.png';
+// import logo from '../../assets/logo.jpg';
+import { FadeIn } from '../fadeIn/FadeIn';
+import { Link, NavLink } from 'react-router-dom';
 import { Container } from '../../styles/globalStyles';
-import logo from '../../assets/nica2.png';
-import { Nav } from '../nav/NavMenu';
-import { Link } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import { SideBar } from '../sideBar/SideBar';
+import * as Styles from './HeaderStyles';
+import { FaBars } from 'react-icons/fa';
+import { Button } from '../button/HeaderButton';
 
 export const Header = () => {
-  const headerBg = () => {
-    window.addEventListener('scroll', () => {
-      document
-        .querySelector('header')
-        .classList.toggle('bg-reveal', window.scrollY > 0);
-    });
-  };
-
-  headerBg();
-
-  const [burgerClass, setBurgerClass] = useState('burger-bar unclicked');
-  const [menuClass, setMenuClass] = useState(false);
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
-
-  const updateMenu = () => {
-    if (!isMenuClicked) {
-      setBurgerClass('burger-bar clicked');
-      setMenuClass(true);
-    } else {
-      setBurgerClass('burger-bar unclicked');
-      setMenuClass(false);
-    }
-    setIsMenuClicked(!isMenuClicked);
-  };
-
   return (
-    <Styles.MainHeaderContainer className='header'>
+    <Styles.MainHeaderContainer>
       <Container primary>
         <Styles.HeaderLogo>
           <Link to='/'>
-            <img src={logo} alt='logo' />
+            <img src={nicaLogo} alt='logo' />
           </Link>
         </Styles.HeaderLogo>
-        <div>
-          <Nav />
-        </div>
-        <Styles.HeaderBtn>
-          <Link to='/login'>
-            <button>Login</button>
-          </Link>
-          <Link to='/register'>
-            <button>Register</button>
-          </Link>
-        </Styles.HeaderBtn>
-        <div className='burger-menu' onClick={updateMenu}>
-          <div className={burgerClass}></div>
-          <div className={burgerClass}></div>
-          <div className={burgerClass}></div>
-        </div>
+        <Styles.HeaderNavWrapper>
+          <ul>
+            <NavLink to='/'>
+              <li>Home</li>
+            </NavLink>
+            <NavLink to='about'>
+              <li>About</li>
+            </NavLink>
+            <NavLink to='/contact'>
+              <li>Contact</li>
+            </NavLink>
+            <NavLink to='/gallery'>
+              <li>Gallery</li>
+            </NavLink>
+          </ul>
+        </Styles.HeaderNavWrapper>
+        <Styles.DivWrapper>
+          <Styles.HeaderBtn>
+            <Button to='/login'>Login</Button>
+            <Button to='/register'>Register</Button>
+          </Styles.HeaderBtn>
+          <Styles.FaBarsBox>
+            <FaBars />
+          </Styles.FaBarsBox>
+        </Styles.DivWrapper>
       </Container>
-      <AnimatePresence>
-        {menuClass && <SideBar setMenuClass={updateMenu} />}
-      </AnimatePresence>
     </Styles.MainHeaderContainer>
   );
 };
