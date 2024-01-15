@@ -8,6 +8,7 @@ import Login from './pages/login/Login';
 import { Footer } from './components/footer/Footer';
 import { About } from './pages/about/About';
 import { Gallery } from './pages/gallery/Gallery';
+import { Contact } from './pages/contact/Contact';
 
 const App = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/gallery' element={<Gallery />} />
 
           <Route path='/register' element={<Register />} />

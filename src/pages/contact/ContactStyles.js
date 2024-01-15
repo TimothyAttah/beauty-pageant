@@ -17,7 +17,7 @@ export const Title = styled.span`
   font-size: ${theme.fontSize.fs2xl};
   font-weight: 400;
   text-transform: capitalize;
-  color: var(--main-color);
+  color: ${theme.color.textColor2};
   margin: 0 0 12px;
   padding: 0 40px;
   position: relative;
@@ -28,7 +28,7 @@ export const Title = styled.span`
     position: absolute;
     height: 1px;
     width: 34px;
-    background-color: var(--main-color);
+    background-color: ${theme.color.textColor2};
     top: 50%;
     transform: translateY(-50%);
   }
@@ -44,6 +44,7 @@ export const SubTitle = styled.h2`
   font-size: ${theme.fontSize.fs3xl};
   text-transform: capitalize;
   margin-bottom: 80px;
+  color: ${theme.color.textColor};
 
   @media screen and (max-width: ${theme.screens.smallScreen}) {
     font-size: ${theme.fontSize.fslg};
@@ -55,7 +56,7 @@ export const ContactInfo = styled.div`
 
   div + div {
     margin-top: 20px;
-    border-top: 1px solid ${theme.color.borderColor};
+    border-top: 1px solid ${theme.color.textColor};
   }
 `;
 export const ContactInfoItem = styled.div`
@@ -77,9 +78,9 @@ export const ContactInfoItem = styled.div`
 export const SvgBox = styled.div`
   height: 50px;
   width: 50px;
-  background-color: ${theme.color.bgColor};
+  background-color: ${theme.color.textColor2};
   box-shadow: ${theme.shadow.mainShadow};
-  color: var(--main-color);
+  /* color: ${theme.color.textColor}; */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -100,20 +101,20 @@ export const InputBox = styled.div`
     width: 100%;
     height: 50px;
     border-radius: 25px;
-    border: 1px solid ${theme.color.borderColor};
+    border: 1px solid ${theme.color.textColor};
     background-color: transparent;
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
-    color: ${theme.color.textXDarkGray};
+    color: ${theme.color.textColor};
     padding: 0 20px;
 
     :focus {
-      outline: 1px solid ${theme.color.borderColor};
+      outline: 1px solid ${theme.color.textColor};
     }
 
     ::placeholder {
-      color: ${theme.color.textDarkGray};
+      color: ${theme.color.linkColor};
       opacity: 1; /* overide firefox default opacity */
     }
   }
@@ -125,4 +126,27 @@ export const InputBox = styled.div`
   }
 `;
 
-export const BtnWrap = styled.div``;
+export const BtnWrap = styled.div`
+  button {
+    display: inline-block;
+    padding: 10px 28px;
+    background-color: ${theme.color.textColor};
+    color: ${({ theme }) => theme.color.textWhite};
+    font-weight: 500;
+    font-size: ${({ theme }) => theme.fontSize.fsmd};
+    text-transform: capitalize;
+    line-height: 1.5;
+    font-family: inherit;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    vertical-align: middle;
+    user-select: none;
+    transition: all 0.3s ease;
+
+    :hover {
+      background-color: transparent;
+      color: var(--main-color);
+      border-color: var(--main-color);
+    }
+  }
+`;

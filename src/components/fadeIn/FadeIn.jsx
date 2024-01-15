@@ -27,10 +27,17 @@ const FadeInMotionStyle = styled(motion.div)`
   width: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: ${(props) => (props.center ? 'center' : '')};
 `;
 
-export const FadeIn = ({ children, delay, direction, fullWidth, padding }) => {
+export const FadeIn = ({
+  children,
+  delay,
+  direction,
+  fullWidth,
+  padding,
+  center,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -63,6 +70,7 @@ export const FadeIn = ({ children, delay, direction, fullWidth, padding }) => {
           delay: delay,
           ease: [0.25, 0.25, 0.25, 0.75],
         }}
+        center={center}
       >
         {children}
       </FadeInMotionStyle>
