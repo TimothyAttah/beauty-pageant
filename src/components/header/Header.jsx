@@ -13,34 +13,40 @@ export const Header = () => {
     <Styles.MainHeaderContainer>
       <Container primary>
         <Styles.HeaderLogo>
-          <Link to='/'>
-            <img src={nicaLogo} alt='logo' />
-          </Link>
+          <FadeIn delay={0.2} direction='down'>
+            <Link to='/'>
+              <img src={nicaLogo} alt='logo' />
+            </Link>
+          </FadeIn>
         </Styles.HeaderLogo>
         <Styles.HeaderNavWrapper>
-          <ul>
-            <NavLink to='/'>
-              <li>Home</li>
-            </NavLink>
-            <NavLink to='about'>
-              <li>About</li>
-            </NavLink>
-            <NavLink to='/contact'>
-              <li>Contact</li>
-            </NavLink>
-            <NavLink to='/gallery'>
-              <li>Gallery</li>
-            </NavLink>
-          </ul>
+          <FadeIn delay={0.3} direction='down'>
+            <ul>
+              <NavLink to='/'>
+                <li>Home</li>
+              </NavLink>
+              <NavLink to='about'>
+                <li>About</li>
+              </NavLink>
+              <NavLink to='/contact'>
+                <li>Contact</li>
+              </NavLink>
+              <NavLink to='/gallery'>
+                <li>Gallery</li>
+              </NavLink>
+            </ul>
+          </FadeIn>
         </Styles.HeaderNavWrapper>
         <Styles.DivWrapper>
-          <Styles.HeaderBtn>
-            <Button to='/login'>Login</Button>
-            <Button to='/register'>Register</Button>
-          </Styles.HeaderBtn>
-          <Styles.FaBarsBox>
-            <FaBars />
-          </Styles.FaBarsBox>
+          <FadeIn delay={0.4} direction='down'>
+            <Styles.HeaderBtn>
+              <Button to='/login'>Login</Button>
+              <Button to='/register'>Register</Button>
+            </Styles.HeaderBtn>
+            <Styles.FaBarsBox>
+              <FaBars />
+            </Styles.FaBarsBox>
+          </FadeIn>
         </Styles.DivWrapper>
       </Container>
     </Styles.MainHeaderContainer>
