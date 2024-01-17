@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styles from './SideBarStyles';
-import { NavLink } from '../navlink/NavLink';
+import { NavLink } from 'react-router-dom';
+import { FaTimes } from 'react-icons/fa';
 
 const showAnimation = {
   hidden: {
@@ -27,28 +28,38 @@ const showAnimation = {
 
 const navData = [
   {
+    name: 'Login',
+    // icon: <RiHome2Line />,
+    to: '/login',
+  },
+  {
+    name: 'Register',
+    // icon: <RiHome2Line />,
+    to: '/register',
+  },
+  {
     name: 'Home',
     // icon: <RiHome2Line />,
-    to: 'home',
+    to: '/',
   },
   {
     name: 'About',
     // icon: <RiPriceTagFill />,
-    to: 'about',
-  },
-  {
-    name: 'Contact',
-    // icon: <RiSuitcase3Line />,
-    to: 'contact',
+    to: '/about',
   },
   {
     name: 'Gallery',
     // icon: <RiBookReadFill />,
-    to: 'gallery',
+    to: '/gallery',
+  },
+  {
+    name: 'Contact',
+    // icon: <RiSuitcase3Line />,
+    to: '/contact',
   },
 ];
 
-export const SideBar = ({ setMenuClass }) => {
+export const SideBar = ({ setOpen }) => {
   return (
     <Styles.SideBar
       variants={showAnimation}
@@ -56,9 +67,17 @@ export const SideBar = ({ setMenuClass }) => {
       animate='show'
       exit='hidden'
     >
+      <Styles.CloseSideBarIcon onClick={() => setOpen(false)}>
+        <FaTimes />
+      </Styles.CloseSideBarIcon>
       <Styles.SideBarNavLinks>
         {navData.map((item, i) => (
-          <NavLink to={item.to} key={i} onClick={() => setMenuClass(false)}>
+          <NavLink
+            to={item.to}
+            key={i}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            onClick={() => setOpen(false)}
+          >
             <span>{item.name}</span>
           </NavLink>
         ))}

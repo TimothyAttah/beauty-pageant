@@ -9,6 +9,11 @@ import { FaStar } from 'react-icons/fa';
 import heroVideo from '../../assets/heroVic2.mp4';
 
 export const Hero = () => {
+  window.addEventListener('error', (e) => {
+    console.error(e.message);
+    e.stopImmediatePropagation();
+    e.preventDefault();
+  });
   return (
     <Container>
       <Styles.HeroContainer>
@@ -31,14 +36,7 @@ export const Hero = () => {
           </Styles.HeroMiddleSide>
           <FadeIn delay={0.5} direction='left'>
             <Styles.HeroRightSide>
-              <video
-                src={heroVideo}
-                autoPlay='muted'
-                muted
-                loop
-                controls
-              ></video>
-              {/* <img src={nicaPix} alt='img' /> */}
+              <video src={heroVideo} autoPlay muted loop></video>
             </Styles.HeroRightSide>
           </FadeIn>
         </Styles.HeroWrapper>

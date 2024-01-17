@@ -19,6 +19,14 @@ const App = () => {
     });
   }, []);
 
+  window.addEventListener('error', (e) => {
+    console.error(e.message);
+    e.stopImmediatePropagation();
+    e.preventDefault();
+  });
+
+  window.ResizeObserver = undefined;
+
   return (
     <>
       <BrowserRouter>

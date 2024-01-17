@@ -115,6 +115,7 @@ export const FaBarsBox = styled.div`
   font-size: ${theme.fontSize.fs2xl};
   display: none;
   transition: 0.5s all;
+  cursor: pointer;
 
   @media screen and (max-width: ${theme.screens.mediumScreen}) {
     display: flex;

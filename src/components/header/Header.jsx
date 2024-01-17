@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import nicaLogo from '../../assets/nicaLogo.png';
 // import logo from '../../assets/logo.jpg';
 import { FadeIn } from '../fadeIn/FadeIn';
@@ -7,8 +7,34 @@ import { Container } from '../../styles/globalStyles';
 import * as Styles from './HeaderStyles';
 import { FaBars } from 'react-icons/fa';
 import { Button } from '../button/HeaderButton';
+import { AnimatePresence } from 'framer-motion';
+import { SideBar } from '../sideBar/SideBar';
+
+const navData = [
+  {
+    name: 'Home',
+    // icon: <RiHome2Line />,
+    to: '/',
+  },
+  {
+    name: 'About',
+    // icon: <RiPriceTagFill />,
+    to: '/about',
+  },
+  {
+    name: 'Gallery',
+    // icon: <RiBookReadFill />,
+    to: '/gallery',
+  },
+  {
+    name: 'Contact',
+    // icon: <RiSuitcase3Line />,
+    to: '/contact',
+  },
+];
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <Styles.MainHeaderContainer>
       <Container primary>
@@ -22,30 +48,15 @@ export const Header = () => {
         <Styles.HeaderNavWrapper>
           <FadeIn delay={0.3} direction='down'>
             <ul>
-              <NavLink
-                to='/'
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                <li>Home</li>
-              </NavLink>
-              <NavLink
-                to='about'
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                <li>About</li>
-              </NavLink>
-              <NavLink
-                to='/gallery'
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                <li>Gallery</li>
-              </NavLink>
-              <NavLink
-                to='/contact'
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                <li>Contact</li>
-              </NavLink>
+              {navData.map((item, i) => (
+                <NavLink
+                  key={i}
+                  to={item.to}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  <li>{item.name}</li>
+                </NavLink>
+              ))}
             </ul>
           </FadeIn>
         </Styles.HeaderNavWrapper>
@@ -55,12 +66,13 @@ export const Header = () => {
               <Button to='/login'>Login</Button>
               <Button to='/register'>Register</Button>
             </Styles.HeaderBtn>
-            <Styles.FaBarsBox>
+            <Styles.FaBarsBox onClick={() => setOpen(true)}>
               <FaBars />
             </Styles.FaBarsBox>
           </FadeIn>
         </Styles.DivWrapper>
       </Container>
+      <AnimatePresence>{open && <SideBar setOpen={setOpen} />}</AnimatePresence>
     </Styles.MainHeaderContainer>
   );
 };
