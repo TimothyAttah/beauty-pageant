@@ -2,10 +2,11 @@ import React from 'react';
 import { Container } from '../../styles/globalStyles';
 import { FadeIn } from '../../components/fadeIn/FadeIn';
 // import logo from '../../assets/logo1.png';
-import nicaPix from '../../assets/gallery6.png';
 import * as Styles from './HeroStyle';
 import { Button } from '../../components/button/HeaderButton';
 import { FaStar } from 'react-icons/fa';
+// import heroVideo from '../../assets/heroVic3/heroVideo (copy).mp4';
+import heroVideo from '../../assets/heroVic2.mp4';
 
 export const Hero = () => {
   return (
@@ -30,7 +31,14 @@ export const Hero = () => {
           </Styles.HeroMiddleSide>
           <FadeIn delay={0.5} direction='left'>
             <Styles.HeroRightSide>
-              <img src={nicaPix} alt='img' />
+              <video
+                src={heroVideo}
+                autoPlay='muted'
+                muted
+                loop
+                controls
+              ></video>
+              {/* <img src={nicaPix} alt='img' /> */}
             </Styles.HeroRightSide>
           </FadeIn>
         </Styles.HeroWrapper>

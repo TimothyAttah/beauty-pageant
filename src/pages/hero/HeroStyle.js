@@ -75,8 +75,24 @@ export const HeroLeftSide = styled.div`
 export const HeroMiddleSide = styled.div``;
 export const HeroRightSide = styled.div`
   width: 600px;
+  width: 100%;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
   img {
     width: 100%;
+  }
+`;
+
+export const VideoWrapper = styled.div`
+  max-width: 600px;
+  width: 100%;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 `;
 
