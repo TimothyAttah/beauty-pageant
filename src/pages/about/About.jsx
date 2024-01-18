@@ -46,7 +46,7 @@ export const About = () => {
               <Styles.AboutCard>
                 <Styles.AboutPrizeTitle>Winner</Styles.AboutPrizeTitle>
                 <Styles.AboutPrizeMoney>
-                  5 Million Naira (N5,000,000) Only
+                  5 Million Naira (₦5,000,000) Only
                 </Styles.AboutPrizeMoney>
                 <Styles.AboutPrizeSubtitle>
                   An Official Car
@@ -61,7 +61,7 @@ export const About = () => {
               <Styles.AboutCard>
                 <Styles.AboutPrizeTitle>1st Runner-Up</Styles.AboutPrizeTitle>
                 <Styles.AboutPrizeMoney>
-                  3 Million Naira (N5,000,000) Only
+                  3 Million Naira (₦3,000,000) Only
                 </Styles.AboutPrizeMoney>
                 <Styles.AboutPrizeSubtitle>
                   A Trip to Ghana
@@ -73,7 +73,7 @@ export const About = () => {
               <Styles.AboutCard>
                 <Styles.AboutPrizeTitle>2nd Runner-Up</Styles.AboutPrizeTitle>
                 <Styles.AboutPrizeMoney>
-                  1 Million Naira (N5,000,000) Only
+                  1 Million Naira (₦1,000,000) Only
                 </Styles.AboutPrizeMoney>
                 <Styles.AboutPrizeSubtitle>
                   One Year Movie Endorsement

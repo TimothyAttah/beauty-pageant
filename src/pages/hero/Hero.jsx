@@ -6,7 +6,7 @@ import * as Styles from './HeroStyle';
 import { Button } from '../../components/button/HeaderButton';
 import { FaStar } from 'react-icons/fa';
 // import heroVideo from '../../assets/heroVic3/heroVideo (copy).mp4';
-import heroVideo from '../../assets/heroVic2.mp4';
+import heroVideo from './heroVic.mp4';
 
 export const Hero = () => {
   window.addEventListener('error', (e) => {
@@ -36,7 +36,7 @@ export const Hero = () => {
           </Styles.HeroMiddleSide>
           <FadeIn delay={0.5} direction='left'>
             <Styles.HeroRightSide>
-              <video src={heroVideo} autoPlay muted loop></video>
+              <video src={heroVideo} controls></video>
             </Styles.HeroRightSide>
           </FadeIn>
         </Styles.HeroWrapper>
