@@ -136,7 +136,7 @@ button {
 input {
    outline: none;
   border: none;
-  cursor: pointer;
+  ${'' /* cursor: pointer; */}
   :focus {
     outline: none;
   }

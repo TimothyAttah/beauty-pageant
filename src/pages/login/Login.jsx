@@ -1,9 +1,9 @@
 import React from 'react';
-import LoginForm from '../../components/forms/Login';
+import { LoginForm } from '../../components/forms/LoginForm';
 
 const Login = () => {
   return (
-    <div>
+    <div style={{ paddingTop: '150px' }}>
       <LoginForm />
     </div>
   );

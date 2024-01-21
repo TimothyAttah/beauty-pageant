@@ -1,22 +1,15 @@
-import React, { useEffect } from 'react';
-import RegisterForm from '../../components/forms/RegisterForm';
+import React from 'react';
+import { RegisterForm } from '../../components/forms/RegisterForm';
+import { Container } from '../../styles/globalStyles';
+import { AnimatePresence } from 'framer-motion';
 
 const Register = () => {
-  // const form = document.querySelector('form');
-  // const nextBtn = form.querySelector('.nextBtn');
-  // const backBtn = form.querySelector('.nextBtn');
-
-  useEffect(() => {
-    // nextBtn.addEventListener('click', () => {
-    //   form.classList.add('setActive');
-    // });
-  }, []);
-
-  // console.log(nextBtn);
   return (
-    <div>
-      <RegisterForm />
-    </div>
+    <Container style={{ paddingTop: '130px' }}>
+      <AnimatePresence>
+        <RegisterForm />
+      </AnimatePresence>
+    </Container>
   );
 };
 
