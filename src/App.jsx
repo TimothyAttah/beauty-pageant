@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home/Home';
-import { Header } from './components/header/Header';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
-import { Footer } from './components/footer/Footer';
 import { About } from './pages/about/About';
 import { Gallery } from './pages/gallery/Gallery';
 import { Contact } from './pages/contact/Contact';
+import Payment from './pages/payment/Payment';
+import Layout from './components/layout/Layout';
+import RequireAuth from './components/RequireAuth';
+import { useDispatch } from 'react-redux';
+import { getAllContestant } from './redux/actions/contestantActions';
+import { Profile } from './pages/profile/Profile';
+import { Contestants } from './pages/contestant/Contestants';
 
 const App = () => {
   useEffect(() => {
@@ -19,29 +24,39 @@ const App = () => {
     });
   }, []);
 
-  window.addEventListener('error', (e) => {
-    console.error(e.message);
-    e.stopImmediatePropagation();
-    e.preventDefault();
-  });
+  // window.addEventListener('error', (e) => {
+  //   console.error(e.message);
+  //   e.stopImmediatePropagation();
+  //   e.preventDefault();
+  // });
 
-  window.ResizeObserver = undefined;
+  // window.ResizeObserver = undefined;
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllContestant());
+  }, [dispatch]);
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          {/** public routes */}
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/gallery' element={<Gallery />} />
+          <Route path='register' element={<Register />} />
+          <Route path='login' element={<Login />} />
+          <Route path='about' element={<About />} />
+          <Route path='gallery' element={<Gallery />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='payment' element={<Payment />} />
+          <Route path='contestant' element={<Contestants />} />
 
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+          {/** private routes */}
+          <Route element={<RequireAuth />}>
+            <Route path='profile' element={<Profile />} />
+          </Route>
+        </Route>
+      </Routes>
       <ToastContainer />
     </>
   );

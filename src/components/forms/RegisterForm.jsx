@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FadeIn } from '../fadeIn/FadeIn';
 import * as Styles from './FormStyles';
 import nicaFormLogo from '../../assets/nicaLogoForm.png';
+import { useDispatch } from 'react-redux';
+import { registerContestant } from '../../redux/actions/authActions';
 
 const formVariants = {
   hidden: {
@@ -29,13 +31,19 @@ export const RegisterForm = () => {
     schoolOrEmployemt: '',
     degreesOrAchievement: '',
     awards: '',
-    noPublishPhoto: '',
+    noPublishPhoto: false,
     parentSignature: '',
     parentDate: '',
     contestantSignature: '',
     contestantDate: '',
   };
   const [userData, setUserData] = useState(initialData);
+  const dispatch = useDispatch();
+  // const location = useLocation();
+  // const navigate = useNavigate();
+
+  // paystackSecretKey = 'sk_test_d02fdf49cc29ae9822e788484a0d36205c90d2f4';
+  // paystackPublicKey = 'pk_test_07c16182445b8c7bf4c69e83f9d78738abdbd50c';
 
   const {
     contestantName,
@@ -65,7 +73,7 @@ export const RegisterForm = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(userData);
+    dispatch(registerContestant(userData));
   };
   return (
     <Styles.FormContainer>
@@ -316,7 +324,7 @@ export const RegisterForm = () => {
           </Styles.InputBoxWrapper>
         </Styles.FormInfoContainer>
         <Styles.BtnContainer width='250px'>
-          <button>Register</button>
+          <button type='submit'>Register</button>
         </Styles.BtnContainer>
       </Styles.Form>
     </Styles.FormContainer>
